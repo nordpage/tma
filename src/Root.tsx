@@ -115,8 +115,15 @@ function SDKInitialState() {
  */
 export function Root() {
   return (
-      <SDKProvider options={{ acceptCustomStyles: true, cssVars: true}}>
-        <div>123</div>
+      <SDKProvider options={{ acceptCustomStyles: true, cssVars: true, async: true }}>
+        <DisplayGate
+            error={SDKProviderError}
+            loading={SDKProviderLoading}
+            initial={SDKInitialState}
+        >
+          <MainButton/>
+          <InitData/>
+        </DisplayGate>
       </SDKProvider>
   );
 }
