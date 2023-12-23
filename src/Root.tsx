@@ -36,7 +36,7 @@ function MainButton() {
   }, [])
 
   useEffect(() => {
-    mb.setText(`Count is ${count}`);
+    mb.setText("Search");
   }, [mb, count]);
 
   useEffect(() => {
