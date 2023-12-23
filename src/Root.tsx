@@ -115,7 +115,7 @@ function SDKInitialState() {
  */
 export function Root() {
   return (
-      <SDKProvider options={{ acceptCustomStyles: true, cssVars: true, async: true }}>
+      <SDKProvider options={{ acceptCustomStyles: true, cssVars: true}}>
         <div>123</div>
       </SDKProvider>
   );
