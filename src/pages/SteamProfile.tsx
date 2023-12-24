@@ -1,6 +1,4 @@
-import React from 'react';
-
-function SteamProfile() {
+export function SteamProfile() {
     const steamId:string|null = localStorage.getItem("steamId")
 
     return (
@@ -8,4 +6,3 @@ function SteamProfile() {
     )
 }
 
-export default SteamProfile;
