@@ -7,7 +7,7 @@ export const steamApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: steamURL }),
     endpoints: (builder) => ({
         getSteamProfile: builder.query<ISteamProfile, string>({
-            query: (steamId) => `ISteamUser/GetPlayerSummaries/v0002/?key=28A245A3DDE4C15A6CFC679BB5AE9B13&steamids=${steamId}`,
+            query: (steamId) => `ISteamUser/GetPlayerSummaries/v0002/?key=80B5B81001256250B648EA670A2AEE1A&steamids=${steamId}`,
         }),
     }),
 })
