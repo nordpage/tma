@@ -6,9 +6,12 @@ export const steamApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: steamURL }),
     endpoints: (builder) => ({
         getSteamProfile: builder.query({
-            query: (steamId) => `/api/steam/getuser/${steamId}`,
+            query: (steamId) => `/api/steam/getUser/${steamId}`,
+        }),
+        getFriends: builder.query({
+            query: (steamId) => `/api/steam/getFriends/${steamId}`,
         }),
     }),
 })
 
-export const {useGetSteamProfileQuery} = steamApi
+export const {useGetSteamProfileQuery, useGetFriendsQuery} = steamApi

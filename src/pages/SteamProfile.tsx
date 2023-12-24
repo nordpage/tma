@@ -1,4 +1,4 @@
-import {useGetSteamProfileQuery} from "../api/steamApi.tsx";
+import {useGetFriendsQuery, useGetSteamProfileQuery} from "../api/steamApi.tsx";
 import {InputText} from "primereact/inputtext";
 import {useState} from "react";
 import {Button} from "primereact/button";
@@ -8,6 +8,8 @@ export function SteamProfile() {
     const steamId = localStorage.getItem("steamId")
     const [id, setId] = useState("")
     const { data, isError, isLoading } = useGetSteamProfileQuery(steamId)
+    const { friends } = useGetFriendsQuery(steamId)
+
 
 
     const saveId = () => {
@@ -24,6 +26,7 @@ export function SteamProfile() {
                 <div className="profile">
                     <img src={data.avatar.large} alt={data.nickname} className="avatar"/>
                     <h3>{data.nickname}</h3>
+                    {friends && <div>{friends.toString()}</div>}
                 </div>
             ) : null}
         </div> : <div className="inner">
