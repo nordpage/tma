@@ -3,7 +3,7 @@ import {
   SDKProvider,
   useMainButton,
   useBackButton,
-  useInitData, DisplayGate,
+  useInitData,
 } from '@tma.js/sdk-react';
 
 import './App.css';
@@ -115,15 +115,10 @@ function SDKInitialState() {
  */
 export function Root() {
   return (
-      <SDKProvider options={{ acceptCustomStyles: true, cssVars: true, async: true }}>
-        <DisplayGate
-            error={SDKProviderError}
-            loading={SDKProviderLoading}
-            initial={SDKInitialState}
-        >
-          <MainButton/>
-          <InitData/>
-        </DisplayGate>
+      <SDKProvider options={{ acceptCustomStyles: true, cssVars: true }}>
+        <div className="container">
+          123
+        </div>
       </SDKProvider>
   );
 }
