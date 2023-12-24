@@ -108,9 +108,7 @@ import {SteamProfile} from "./pages/SteamProfile.tsx";
 //   return <div>Waiting for initialization to start.</div>;
 // }
 
-/**
- * Root component of the whole project.
- */
+
 export function Root() {
     const steamId = localStorage.getItem("steamId")
   return (
