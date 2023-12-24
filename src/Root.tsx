@@ -4,7 +4,7 @@ import {
 
 import './App.css';
 import WebApp from "@twa-dev/sdk";
-import {SteamProfile} from "./pages/SteamProfile.tsx";
+import SteamProfile from "./pages/SteamProfile.tsx";
 
 
 // function MainButton() {
@@ -108,9 +108,7 @@ import {SteamProfile} from "./pages/SteamProfile.tsx";
 //   return <div>Waiting for initialization to start.</div>;
 // }
 
-/**
- * Root component of the whole project.
- */
+
 export function Root() {
   return (
       <SDKProvider options={{ acceptCustomStyles: true, cssVars: true }}>
