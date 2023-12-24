@@ -7,7 +7,7 @@ import '../App.css';
 export function SteamProfile() {
     const steamId = localStorage.getItem("steamId")
     const [id, setId] = useState("")
-    const { data, error, isLoading } = useGetSteamProfileQuery(steamId!)
+    const { data, isError, isLoading } = useGetSteamProfileQuery(steamId!)
 
 
     const saveId = () => {
@@ -16,7 +16,7 @@ export function SteamProfile() {
 
     return (
         steamId !== null ? <div>
-            {error ? (
+            {isError ? (
                 <div>Oh no, there was an error</div>
             ) : isLoading ? (
                 <>Loading...</>
