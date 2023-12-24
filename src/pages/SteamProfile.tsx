@@ -7,7 +7,7 @@ import '../App.css';
 export function SteamProfile() {
     const steamId = localStorage.getItem("steamId")
     const [id, setId] = useState("")
-    const { data } = useGetSteamProfileQuery(steamId!)
+    const { data, error, isLoading } = useGetSteamProfileQuery(steamId!)
 
 
     const saveId = () => {
@@ -16,7 +16,15 @@ export function SteamProfile() {
 
     return (
         steamId !== null ? <div>
-            {data && <p>{data!.response!.players.toString()}</p>}
+            {error ? (
+                <div>Oh no, there was an error</div>
+            ) : isLoading ? (
+                <>Loading...</>
+            ) : data ? (
+                <>
+                    <h3>{data.response.players.toString()}</h3>
+                </>
+            ) : null}
         </div> : <div className="inner">
             Don't have SteamId
             <InputText value={id} onChange={(e) => setId(e.target.value)} />
