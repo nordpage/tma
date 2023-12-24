@@ -21,9 +21,10 @@ export function SteamProfile() {
             ) : isLoading ? (
                 <>Loading...</>
             ) : data ? (
-                <>
+                <div className="profile">
+                    <img src={data.avatar.large} alt={data.nickname} className="avatar"/>
                     <h3>{data.nickname}</h3>
-                </>
+                </div>
             ) : null}
         </div> : <div className="inner">
             Don't have SteamId

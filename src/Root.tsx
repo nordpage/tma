@@ -3,7 +3,6 @@ import {
 } from '@tma.js/sdk-react';
 
 import './App.css';
-import WebApp from "@twa-dev/sdk";
 import {SteamProfile} from "./pages/SteamProfile.tsx";
 
 
@@ -113,7 +112,6 @@ export function Root() {
   return (
       <SDKProvider options={{ acceptCustomStyles: true, cssVars: true, async: true }}>
           <div className="container">
-              <p className="title">Hello, {WebApp.initDataUnsafe.user?.first_name}!</p>
               <SteamProfile/>
           </div>
       </SDKProvider>
