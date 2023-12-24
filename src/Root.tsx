@@ -3,6 +3,7 @@ import {
 } from '@tma.js/sdk-react';
 
 import './App.css';
+import WebApp from "@twa-dev/sdk";
 
 
 // function MainButton() {
@@ -113,7 +114,7 @@ export function Root() {
   return (
       <SDKProvider options={{ acceptCustomStyles: true, cssVars: true }}>
         <div className="container">
-          <p className="title">Hello!</p>
+          <p className="title">`Hello, ${WebApp.initDataUnsafe.user?.first_name}!`</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis culpa, deleniti dolores est facere non placeat quia similique totam velit. Ea expedita fuga quia ratione similique vel voluptatibus! Aperiam dolorem eaque esse id ipsa nam necessitatibus rem velit. Earum eum ipsa mollitia quae? Aliquam aspernatur atque commodi, earum enim, eos error illum in itaque labore molestias natus neque obcaecati officiis omnis quia repellat sapiente tempora vel veritatis vero voluptas voluptatum. Aliquid animi aperiam architecto at deserunt dicta doloremque facilis fugit harum inventore labore laboriosam magnam molestias, mollitia, necessitatibus nulla numquam obcaecati optio porro quo quod reprehenderit repudiandae rerum tempora veritatis!</p>
         </div>
       </SDKProvider>
