@@ -4,6 +4,7 @@ import {
 
 import './App.css';
 import WebApp from "@twa-dev/sdk";
+import {SteamProfile} from "./pages/SteamProfile.tsx";
 
 
 // function MainButton() {
@@ -111,11 +112,12 @@ import WebApp from "@twa-dev/sdk";
  * Root component of the whole project.
  */
 export function Root() {
+    const steamId = localStorage.getItem("steamId")
   return (
       <SDKProvider options={{ acceptCustomStyles: true, cssVars: true }}>
         <div className="container">
-          <p className="title">Hello, {WebApp.initDataUnsafe.user?.first_name}!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis culpa, deleniti dolores est facere non placeat quia similique totam velit. Ea expedita fuga quia ratione similique vel voluptatibus! Aperiam dolorem eaque esse id ipsa nam necessitatibus rem velit. Earum eum ipsa mollitia quae? Aliquam aspernatur atque commodi, earum enim, eos error illum in itaque labore molestias natus neque obcaecati officiis omnis quia repellat sapiente tempora vel veritatis vero voluptas voluptatum. Aliquid animi aperiam architecto at deserunt dicta doloremque facilis fugit harum inventore labore laboriosam magnam molestias, mollitia, necessitatibus nulla numquam obcaecati optio porro quo quod reprehenderit repudiandae rerum tempora veritatis!</p>
+          <p className="title">Привет, {WebApp.initDataUnsafe.user?.first_name}!</p>
+            <SteamProfile steamId={steamId}/>
         </div>
       </SDKProvider>
   );
