@@ -111,11 +111,14 @@ import {SteamProfile} from "./pages/SteamProfile.tsx";
 
 export function Root() {
   return (
-      <SDKProvider options={{ acceptCustomStyles: true, cssVars: true }}>
-        <div className="container">
-          <p className="title">Hello, {WebApp.initDataUnsafe.user?.first_name}!</p>
-            <SteamProfile/>
-        </div>
-      </SDKProvider>
+      <div>
+          <p>Test</p>
+          <SDKProvider options={{ acceptCustomStyles: true, cssVars: true }}>
+              <div className="container">
+                  <p className="title">Hello, {WebApp.initDataUnsafe.user?.first_name}!</p>
+                  <SteamProfile/>
+              </div>
+          </SDKProvider>
+      </div>
   );
 }
