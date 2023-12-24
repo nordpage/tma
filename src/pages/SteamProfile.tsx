@@ -1,7 +1,7 @@
 import React from 'react';
 
 type Props = {
-    steamId:? string
+    steamId:? string | null
 }
 export const SteamProfile = function ({ steamId }: Props) {
     return (
