@@ -1,9 +1,9 @@
 import React from 'react';
 
-type Props = {
-    steamId?: string|null|undefined;
-}
-export const SteamProfile = function ({ steamId }: Props) {
+
+export const SteamProfile = function () {
+    const steamId:string = localStorage.getItem("steamId")
+
     return (
         steamId !== null ? <div>Steam Profile</div> : <div>Don't have SteamId</div>
     )

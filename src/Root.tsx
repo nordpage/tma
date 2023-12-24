@@ -110,12 +110,11 @@ import {SteamProfile} from "./pages/SteamProfile.tsx";
 
 
 export function Root() {
-  const steamId = localStorage.getItem("steamId")
   return (
       <SDKProvider options={{ acceptCustomStyles: true, cssVars: true }}>
         <div className="container">
           <p className="title">Привет, {WebApp.initDataUnsafe.user?.first_name}!</p>
-            <SteamProfile steamId={steamId}/>
+            <SteamProfile/>
         </div>
       </SDKProvider>
   );
