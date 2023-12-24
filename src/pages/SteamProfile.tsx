@@ -3,32 +3,20 @@ import {InputText} from "primereact/inputtext";
 import {useState} from "react";
 import {Button} from "primereact/button";
 import '../App.css';
-import { CloudStorage, postEvent } from '@tma.js/sdk';
 
 export function SteamProfile() {
-
+    const steamId = localStorage.getItem("steamId")
     const [id, setId] = useState("")
-    const { data } = useGetSteamProfileQuery(id!)
-    const cloudStorage = new CloudStorage(
-        '6.10',
-        () => Math.random().toString(),
-        postEvent,
-    );
+    const { data } = useGetSteamProfileQuery(steamId!)
 
-    cloudStorage
-        .get('steamId')
-        .then((value) => {
-            setId(value)
-        });
+
     const saveId = () => {
-        cloudStorage
-            .set('steamId', id)
-            .then(() => console.log("Item added"));
+        localStorage.setItem("steamId", id)
     }
 
     return (
-        id !== null ? <div>
-            {data!.response.players.find(x => x.steamid === id)!.personaname}
+        steamId !== null ? <div>
+            {data && <p>{data!.response!.players.toString()}</p>}
         </div> : <div className="inner">
             Don't have SteamId
             <InputText value={id} onChange={(e) => setId(e.target.value)} />
