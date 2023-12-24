@@ -108,12 +108,14 @@ import {SteamProfile} from "./pages/SteamProfile.tsx";
 //   return <div>Waiting for initialization to start.</div>;
 // }
 
-
+/**
+ * Root component of the whole project.
+ */
 export function Root() {
   return (
       <SDKProvider options={{ acceptCustomStyles: true, cssVars: true }}>
         <div className="container">
-          <p className="title">Привет, {WebApp.initDataUnsafe.user?.first_name}!</p>
+          <p className="title">Hello, {WebApp.initDataUnsafe.user?.first_name}!</p>
             <SteamProfile/>
         </div>
       </SDKProvider>
