@@ -113,8 +113,8 @@ export function Root() {
   return (
       <SDKProvider options={{ acceptCustomStyles: true, cssVars: true }}>
         <div className="container">
-          123
-        </div>npm deploy
+          Hello!
+        </div>
       </SDKProvider>
   );
 }
