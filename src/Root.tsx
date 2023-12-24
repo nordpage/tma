@@ -4,7 +4,6 @@ import {
 
 import './App.css';
 import WebApp from "@twa-dev/sdk";
-import SteamProfile from "./pages/SteamProfile.tsx";
 
 
 // function MainButton() {
@@ -114,7 +113,7 @@ export function Root() {
       <SDKProvider options={{ acceptCustomStyles: true, cssVars: true }}>
         <div className="container">
           <p className="title">Hello, {WebApp.initDataUnsafe.user?.first_name}!</p>
-            <SteamProfile/>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, quisquam?</div>
         </div>
       </SDKProvider>
   );
