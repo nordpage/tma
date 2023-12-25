@@ -23,3 +23,9 @@ export interface ISteamProfileResponsePlayers {
 export interface ISteamProfileResponse {
 	players: ISteamProfileResponsePlayers[];
 }
+
+export interface IFriend {
+	steamID: string,
+	relationship: string,
+	friendSince: number
+}

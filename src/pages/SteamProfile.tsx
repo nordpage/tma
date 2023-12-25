@@ -1,4 +1,4 @@
-import { useGetSteamProfileQuery} from "../api/steamApi.tsx";
+import {useGetFriendsQuery, useGetSteamProfileQuery} from "../api/steamApi.tsx";
 import {InputText} from "primereact/inputtext";
 import {useState} from "react";
 import {Button} from "primereact/button";
@@ -7,11 +7,15 @@ import {Status} from "../components/Status.tsx";
 import {ProgressSpinner} from "primereact/progressspinner";
 
 import 'primeicons/primeicons.css';
+import WebApp from "@twa-dev/sdk";
+import {IFriend} from "../utils/types.ts";
+import {Friend} from "../components/Friend.tsx";
 
 export function SteamProfile() {
     const steamId = localStorage.getItem("steamId")
     const [id, setId] = useState("")
     const { data, isError, isLoading } = useGetSteamProfileQuery(steamId)
+    const friendsQuery = useGetFriendsQuery(steamId)
 
 
 
@@ -19,7 +23,9 @@ export function SteamProfile() {
         localStorage.setItem("steamId", id)
     }
 
-
+const steamLink = () => {
+  WebApp.openLink(data.url)
+}
 
     return (
         steamId !== null ? <div className="container">
@@ -33,8 +39,13 @@ export function SteamProfile() {
                     <div className="horz">
                         <Status type={data.personaState}/>
                         <p className="title">{data.nickname}</p>
-                        <span className="pi pi-external-link" style={{fontSize: '12px'}}></span>
+                        <span className="pi pi-external-link button" style={{fontSize: '12px'}} onClick={steamLink}></span>
                     </div>
+                    {friendsQuery.data !== null && <div className="friendList">{
+                        friendsQuery.data.map((friend: IFriend, index: number) => {
+                            return <Friend steamId={friend.steamID} key={index}/>
+                        })
+                    }</div>}
                 </div>
             ) : null}
         </div> : <div className="inner">
