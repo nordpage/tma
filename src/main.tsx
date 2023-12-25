@@ -8,6 +8,7 @@ import {PrimeReactProvider} from "primereact/api";
 import WebApp from "@twa-dev/sdk";
 
 WebApp.ready();
+WebApp.setHeaderColor(`#2C3E50`);
 WebApp.expand();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

@@ -5,15 +5,15 @@
 }
 
 .offline {
-    background-color: darkred;
+    background-color: #E74C3C;
 }
 
 .online {
-    background-color: #a2cb5a;
+    background-color: #2ECC71;
 }
 
 .busy {
-    background-color: darkgoldenrod;
+    background-color: #F39C12;
 }
 
 .default {
