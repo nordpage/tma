@@ -1,10 +1,12 @@
 import {
-  SDKProvider,
+    SDKProvider,
 } from '@tma.js/sdk-react';
 
 import './App.css';
 import {SteamProfile} from "./pages/SteamProfile.tsx";
-import WebApp from "@twa-dev/sdk";
+
+
+
 
 // function MainButton() {
 //   const mb = useMainButton();
@@ -110,11 +112,6 @@ import WebApp from "@twa-dev/sdk";
 
 
 export function Root() {
-
-    WebApp.ready();
-    WebApp.setBackgroundColor("#ccc")
-    WebApp.expand();
-
 
   return (
       <SDKProvider options={{ acceptCustomStyles: true, cssVars: true, async: true }}>

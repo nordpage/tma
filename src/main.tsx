@@ -5,7 +5,10 @@ import { Root } from './Root.tsx';
 import './index.css';
 import {store} from "./api/store.tsx";
 import {PrimeReactProvider} from "primereact/api";
+import WebApp from "@twa-dev/sdk";
 
+WebApp.ready();
+WebApp.expand();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <Provider store={store}>
