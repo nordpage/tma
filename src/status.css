@@ -1,0 +1,21 @@
+.circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+}
+
+.offline {
+    background-color: darkred;
+}
+
+.online {
+    background-color: #a2cb5a;
+}
+
+.busy {
+    background-color: darkgoldenrod;
+}
+
+.default {
+    background-color: dimgrey;
+}
