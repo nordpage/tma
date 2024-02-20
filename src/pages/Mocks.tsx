@@ -13,11 +13,32 @@ export function Mocks() {
     },[])
 
     const MocksList = () => {
-        return <div className="friendList">{
-            mocks.map((mock: mocksChild, index: number) => {
-                return <div key={index}>{mock.full_name}</div>
-            })
-        }</div>
+        return <div className="friendList">
+            <div className="horz">{
+                mocks.map((mock: mocksChild, index: number) => {
+                    return <div key={index} className="card">
+                        <img src={mock.profile_pic}/>
+                        <p>{mock.full_name}</p>
+                    </div>
+                })
+            }</div>
+            <div className="horz">{
+                mocks.map((mock: mocksChild, index: number) => {
+                    return <div key={index} className="card">
+                        <img src={mock.profile_pic}/>
+                        <p>{mock.full_name}</p>
+                    </div>
+                })
+            }</div>
+            <div className="horz">{
+                mocks.map((mock: mocksChild, index: number) => {
+                    return <div key={index} className="card">
+                        <img src={mock.profile_pic}/>
+                        <p>{mock.full_name}</p>
+                    </div>
+                })
+            }</div>
+        </div>
     }
     return (
         data && <div className="horz">

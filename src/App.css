@@ -66,3 +66,11 @@
   gap: 8px;
   align-items: center;
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 200px;
+  height: 400px;
+}
