@@ -5,6 +5,7 @@ import {
 import './App.css';
 import {SteamProfile} from "./pages/SteamProfile.tsx";
 import WebApp from "@twa-dev/sdk";
+import {Mocks} from "./pages/Mocks.tsx";
 
 
 
@@ -129,7 +130,7 @@ export function Root() {
   return (
       <SDKProvider options={{ acceptCustomStyles: true, cssVars: true, async: true }}>
           <div className="container">
-              <SteamProfile/>
+              <Mocks/>
           </div>
       </SDKProvider>
   );
