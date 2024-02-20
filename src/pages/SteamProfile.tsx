@@ -11,6 +11,7 @@ import WebApp from "@twa-dev/sdk";
 import {IFriend} from "../utils/types.ts";
 import {Friend} from "../components/Friend.tsx";
 import {Toggle} from "../components/Toggle.tsx";
+import {Mocks} from "./Mocks.tsx";
 
 export function SteamProfile() {
     const steamId = localStorage.getItem("steamId")
@@ -37,26 +38,8 @@ const FriendsList = () => {
 }
 
     return (
-        steamId !== null ? <div className="container">
-            {isError ? (
-                <div>Oh no, there was an error</div>
-            ) : isLoading ? (
-                <ProgressSpinner style={{width: '50px', height: '50px'}} strokeWidth="2" animationDuration=".5s" />
-            ) : data ? (
-                <div className="profile">
-                    <img src={data.avatar.large} alt={data.nickname} className="avatar"/>
-                    <div className="horz">
-                        <Status type={data.personaState}/>
-                        <p className="title">{data.nickname}</p>
-                        <span className="pi pi-external-link button" style={{fontSize: '12px'}} onClick={steamLink}></span>
-                    </div>
-                    {friendsQuery.data !== null && <Toggle header="My Friends" children={<FriendsList/>}/> }
-                </div>
-            ) : null}
-        </div> : <div className="inner">
-            Don't have SteamId
-            <InputText value={id} onChange={(e) => setId(e.target.value)} />
-            <Button label="Save SteamId" onClick={saveId}/>
+        <div>
+            <Mocks/>
         </div>
     )
 }
