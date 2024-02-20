@@ -4,6 +4,7 @@ import {
 
 import './App.css';
 import {SteamProfile} from "./pages/SteamProfile.tsx";
+import WebApp from "@twa-dev/sdk";
 
 
 
@@ -112,7 +113,19 @@ import {SteamProfile} from "./pages/SteamProfile.tsx";
 
 
 export function Root() {
+    function buttonOn(){
+        // do something on btn click
+    }
 
+    const main_page = document.querySelector('#main_page');
+
+
+    if  (main_page){
+        WebApp.expand() //expand window after page loading
+
+        WebApp.MainButton.onClick(buttonOn) //set func on main button click
+        WebApp.MainButton.show() //show telegram btn
+    }
   return (
       <SDKProvider options={{ acceptCustomStyles: true, cssVars: true, async: true }}>
           <div className="container">

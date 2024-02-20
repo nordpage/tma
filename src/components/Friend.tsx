@@ -14,7 +14,7 @@ export function Friend({steamId, key} : Props) {
         data && <div className="horz" key={key}>
             <img src={data.avatar.large} alt={data.nickname} className="avatarSmall"/>
             <div>{data.nickname}</div>
-            <Status type={data.personastate}/>
+            <Status type={data.personaState}/>
         </div>
 )
 }
