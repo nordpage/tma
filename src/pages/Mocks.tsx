@@ -1,19 +1,21 @@
-
-import {IFriend} from "../utils/types.ts";
-import {Friend} from "../components/Friend.tsx";
 import data from "../utils/mocks.json"
+import React from "react";
+import {mocksChild} from "./mocks.ts";
 
 
 
 export function Mocks() {
 
-    const mocks = JSON.parse(data)
+    const [mocks, setMocks] = React.useState<mocksChild[]>([])
 
+    React.useEffect(() => {
+        setMocks(data);
+    },[])
 
     const MocksList = () => {
         return <div className="friendList">{
-            mocks.map((friend: IFriend, index: number) => {
-                return <Friend steamId={friend.steamID} key={index}/>
+            mocks.map((mock: mocksChild, index: number) => {
+                return <div key={index}>{mock.full_name}</div>
             })
         }</div>
     }
