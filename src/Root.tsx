@@ -3,7 +3,6 @@ import {
 } from '@tma.js/sdk-react';
 
 import './App.css';
-import {SteamProfile} from "./pages/SteamProfile.tsx";
 import WebApp from "@twa-dev/sdk";
 import {Mocks} from "./pages/Mocks.tsx";
 
