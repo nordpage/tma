@@ -62,7 +62,8 @@
 
 .horz {
   display: flex;
-  max-width: 100%;
+  width: 100%;
+  overflow-x: hidden;
   flex-direction: row;
   gap: 8px;
   align-items: center;
