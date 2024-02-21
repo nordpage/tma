@@ -1,5 +1,5 @@
 import data from "../utils/mocks.json"
-import React from "react";
+import React, {Suspense} from "react";
 import {mocksChild} from "./mocks.ts";
 
 
@@ -13,7 +13,7 @@ export function Mocks() {
     },[])
 
     const MocksList = () => {
-        return <div className="friendList">
+        return <Suspense fallback={<div>Loading...</div>}>
             <div className="horz">{
                 mocks.map((mock: mocksChild, index: number) => {
                     return <div key={index} className="card">
@@ -38,7 +38,7 @@ export function Mocks() {
                     </div>
                 })
             }</div>
-        </div>
+        </Suspense>
     }
     return (
         data && <div className="horz">
